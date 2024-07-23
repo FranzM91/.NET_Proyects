@@ -1,0 +1,11 @@
+
+/ConsoleAppEF/ConsoleAppEF/bin
+/ConsoleAppEF/ConsoleAppEF/obj
+/ConsoleAppEF/packages
+/kiosco/manilab.core.entityframework/obj
+/kiosco/manilab.core.interfaces/obj
+/kiosco/manilab.kiosco.entities/obj
+/kiosco/manilab.kiosco.interfaces/obj
+/kiosco/manilab.kiosco.server/manilab.kiosco.server/obj
+/kiosco/manilab.kiosco.services/obj
+/kiosco/manilab.kiosco.server/.vs

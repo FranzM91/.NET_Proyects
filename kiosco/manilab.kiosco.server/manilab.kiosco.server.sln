@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.kiosco.server", "manilab.kiosco.server\manilab.kiosco.server.csproj", "{C325AA2E-329C-4AD1-A9C8-E1EDB0CECE6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.core.entityframework", "..\manilab.core.entityframework\manilab.core.entityframework.csproj", "{AD718EA6-BC09-4888-8708-0F0A40316327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.core.interfaces", "..\manilab.core.interfaces\manilab.core.interfaces.csproj", "{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.kiosco.entities", "..\manilab.kiosco.entities\manilab.kiosco.entities.csproj", "{9A8D2C6D-7187-462A-9B14-547489018E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.kiosco.interfaces", "..\manilab.kiosco.interfaces\manilab.kiosco.interfaces.csproj", "{043A23AA-9D01-455E-8D8D-D39AA69F05D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.kiosco.services", "..\manilab.kiosco.services\manilab.kiosco.services.csproj", "{7E0B10A8-32D2-4DB3-9D39-D769EEE4CDCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C325AA2E-329C-4AD1-A9C8-E1EDB0CECE6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C325AA2E-329C-4AD1-A9C8-E1EDB0CECE6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C325AA2E-329C-4AD1-A9C8-E1EDB0CECE6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C325AA2E-329C-4AD1-A9C8-E1EDB0CECE6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8D2C6D-7187-462A-9B14-547489018E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8D2C6D-7187-462A-9B14-547489018E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8D2C6D-7187-462A-9B14-547489018E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8D2C6D-7187-462A-9B14-547489018E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043A23AA-9D01-455E-8D8D-D39AA69F05D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043A23AA-9D01-455E-8D8D-D39AA69F05D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043A23AA-9D01-455E-8D8D-D39AA69F05D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043A23AA-9D01-455E-8D8D-D39AA69F05D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E0B10A8-32D2-4DB3-9D39-D769EEE4CDCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0B10A8-32D2-4DB3-9D39-D769EEE4CDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0B10A8-32D2-4DB3-9D39-D769EEE4CDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0B10A8-32D2-4DB3-9D39-D769EEE4CDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2B8408A-4F28-4875-B624-13E3D1F7D687}
+	EndGlobalSection
+EndGlobal
