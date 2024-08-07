@@ -9,3 +9,32 @@
 /kiosco/manilab.kiosco.server/manilab.kiosco.server/obj
 /kiosco/manilab.kiosco.services/obj
 /kiosco/manilab.kiosco.server/.vs
+/manilab EF/manilab.server/manilab.test/Migrations/202408072002111_InitialCreate.cs
+/manilab EF/manilab.server/manilab.test/Migrations/202408072002111_InitialCreate.designer.cs
+/manilab EF/manilab.server/manilab.test/Migrations/202408072002111_InitialCreate.resx
+/manilab EF/manilab.server/.vs/manilab.server
+/manilab EF/manilab.server/manilab.core.entityframework/bin/Debug
+/manilab EF/manilab.server/manilab.core.entityframework/obj/Debug
+/manilab EF/manilab.server/manilab.core.interfaces/bin/Debug
+/manilab EF/manilab.server/manilab.core.interfaces/obj/Debug
+/manilab EF/manilab.server/manilab.Entities/bin/Debug
+/manilab EF/manilab.server/manilab.Entities/obj/Debug
+/manilab EF/manilab.server/manilab.interfaces/bin/Debug
+/manilab EF/manilab.server/manilab.interfaces/obj/Debug
+/manilab EF/manilab.server/manilab.server/bin/Debug
+/manilab EF/manilab.server/manilab.server/obj/Debug
+/manilab EF/manilab.server/manilab.test/bin/Debug
+/manilab EF/manilab.server/manilab.test/obj/Debug
+/manilab EF/manilab.server/packages
+/manilab EF/manilab.server/manilab.core.entityframework/bin
+/manilab EF/manilab.server/manilab.core.entityframework/obj
+/manilab EF/manilab.server/manilab.core.interfaces/bin
+/manilab EF/manilab.server/manilab.core.interfaces/obj
+/manilab EF/manilab.server/manilab.Entities/bin
+/manilab EF/manilab.server/manilab.Entities/obj
+/manilab EF/manilab.server/manilab.interfaces/bin
+/manilab EF/manilab.server/manilab.interfaces/obj
+/manilab EF/manilab.server/manilab.server/bin
+/manilab EF/manilab.server/manilab.server/obj
+/manilab EF/manilab.server/manilab.test/bin
+/manilab EF/manilab.server/manilab.test/obj

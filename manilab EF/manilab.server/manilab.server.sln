@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.server", "manilab.server\manilab.server.csproj", "{94D38622-1CBB-48D1-B673-34AB834BB1BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.core.entityframework", "manilab.core.entityframework\manilab.core.entityframework.csproj", "{AD718EA6-BC09-4888-8708-0F0A40316327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.core.interfaces", "manilab.core.interfaces\manilab.core.interfaces.csproj", "{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.Entities", "manilab.Entities\manilab.Entities.csproj", "{179C1D5B-A011-49BB-B5E0-A289ABE40921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.interfaces", "manilab.interfaces\manilab.interfaces.csproj", "{6BDC3A6F-B398-4EDA-8F06-230FA4202317}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "manilab.test", "manilab.test\manilab.test.csproj", "{BA8AF31E-E29D-4A6A-902B-BBF96596B6BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94D38622-1CBB-48D1-B673-34AB834BB1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D38622-1CBB-48D1-B673-34AB834BB1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D38622-1CBB-48D1-B673-34AB834BB1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D38622-1CBB-48D1-B673-34AB834BB1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD718EA6-BC09-4888-8708-0F0A40316327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDE055B-F55E-4DB5-AA41-437AA35F0EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179C1D5B-A011-49BB-B5E0-A289ABE40921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179C1D5B-A011-49BB-B5E0-A289ABE40921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179C1D5B-A011-49BB-B5E0-A289ABE40921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179C1D5B-A011-49BB-B5E0-A289ABE40921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDC3A6F-B398-4EDA-8F06-230FA4202317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDC3A6F-B398-4EDA-8F06-230FA4202317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDC3A6F-B398-4EDA-8F06-230FA4202317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDC3A6F-B398-4EDA-8F06-230FA4202317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA8AF31E-E29D-4A6A-902B-BBF96596B6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA8AF31E-E29D-4A6A-902B-BBF96596B6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA8AF31E-E29D-4A6A-902B-BBF96596B6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA8AF31E-E29D-4A6A-902B-BBF96596B6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4FB5B20-919F-4789-A9E9-D0B6BDF5DE29}
+	EndGlobalSection
+EndGlobal
