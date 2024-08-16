@@ -44,16 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\TodoAppBusiness.cs" />
     <Compile Include="Data\Contracts\IGenericDao.cs" />
+    <Compile Include="Data\Contracts\ITodoAppDao.cs" />
     <Compile Include="Data\GenericDao.cs" />
+    <Compile Include="Data\TodoAppDao.cs" />
     <Compile Include="Entities\TodoApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Mappings\User.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TodoApp.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
