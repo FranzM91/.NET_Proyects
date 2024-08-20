@@ -18,7 +18,7 @@ namespace uab.server.test
         {
             var data = new TodoApp()
             {
-                Descripcion = "test",
+                Descripcion = "test 19082024",
                 Estado = true,
                 Visible = true,
                 FechaCreacion = new DateTime(),
