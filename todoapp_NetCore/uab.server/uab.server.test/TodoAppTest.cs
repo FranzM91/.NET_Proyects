@@ -1,40 +1,41 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using uab.server.Business;
 using uab.server.Entities;
 
 namespace uab.server.test
 {
-    [TestClass]
-    public class TodoAppTest
+    public class Tests
     {
-        private readonly TodoAppBusiness repositorio;
-        public TodoAppTest()
+        public readonly TodoAppBusiness todoAppBusiness;
+        public Tests()
         {
-            repositorio = new TodoAppBusiness();
+            todoAppBusiness = new TodoAppBusiness();
         }
-        [TestMethod]
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
         public void Save()
         {
             var data = new TodoApp()
             {
-                Descripcion = "test 21082024",
+                Descripcion = "test fom net Core 21082024",
                 Estado = true,
                 Visible = true,
                 FechaCreacion = DateTime.Now,
                 FechaActualizacion = DateTime.Now
             };
 
-            repositorio.SaveOrUpdate(data);
+            todoAppBusiness.SaveOrUpdate(data);
 
             Assert.IsTrue(data.Id != 0);
         }
 
-        [TestMethod]
-        public void GetAll()
+        [Test]
+        public void Get()
         {
-            var result = repositorio.GetById(5);
-
+            var result = todoAppBusiness.GetById(5);
             Assert.IsTrue(result.Id != 0);
         }
     }

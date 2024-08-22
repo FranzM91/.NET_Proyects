@@ -45,3 +45,11 @@
 /todoapp/uab.server/uab.server.test/bin/Debug
 /todoapp/uab.server/uab.server.test/obj/Debug
 /todoapp/uab.server/packages
+/todoapp_NetCore/uab.server/.vs
+/todoapp_NetCore/uab.server/uab.server.test/bin
+/todoapp_NetCore/uab.server/uab.server.test/obj
+/todoapp_NetCore/uab.server/uab.server/bin
+/todoapp_NetCore/uab.server/uab.server/obj
+/todoapp_NetCore/WebApplicationTodoApp/.vs
+/todoapp_NetCore/WebApplicationTodoApp/WebApplicationTodoApp/bin
+/todoapp_NetCore/WebApplicationTodoApp/WebApplicationTodoApp/obj
