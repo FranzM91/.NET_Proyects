@@ -21,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="uab.server">
-      <HintPath>..\..\lib\uab.server.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\uab.server\uab.server.csproj" />
   </ItemGroup>
 
   <ItemGroup>

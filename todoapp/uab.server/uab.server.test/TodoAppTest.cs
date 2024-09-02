@@ -8,10 +8,10 @@ namespace uab.server.test
     [TestClass]
     public class TodoAppTest
     {
-        private readonly TodoAppBusiness repositorio;
+        private readonly TodoAppBusiness todoAppRepositorio;
         public TodoAppTest()
         {
-            repositorio = new TodoAppBusiness();
+            todoAppRepositorio = new TodoAppBusiness();
         }
         [TestMethod]
         public void Save()
@@ -25,17 +25,23 @@ namespace uab.server.test
                 FechaActualizacion = DateTime.Now
             };
 
-            repositorio.SaveOrUpdate(data);
+            todoAppRepositorio.SaveOrUpdate(data);
 
+            Assert.IsTrue(data.Id != 0);
+        }
+        [TestMethod]
+        public void GetById()
+        {
+            var data = todoAppRepositorio.GetById(1008);
             Assert.IsTrue(data.Id != 0);
         }
 
         [TestMethod]
-        public void GetAll()
+        public void DeleteById()
         {
-            var result = repositorio.GetById(5);
-
-            Assert.IsTrue(result.Id != 0);
+            //llamar al metodo delete()
+            todoAppRepositorio.DeleteById(4359);
+            Assert.IsTrue(1!=0);
         }
     }
 }

@@ -1,0 +1,6 @@
+@uab.server.webapp_HostAddress = http://localhost:5182
+
+GET {{uab.server.webapp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -20,7 +20,7 @@ namespace uab.server.test
         {
             var data = new TodoApp()
             {
-                Descripcion = "test fom net Core 21082024",
+                Descripcion = "guardando nuevo dato",
                 Estado = true,
                 Visible = true,
                 FechaCreacion = DateTime.Now,
@@ -35,7 +35,7 @@ namespace uab.server.test
         [Test]
         public void Get()
         {
-            var result = todoAppBusiness.GetById(5);
+            var result = todoAppBusiness.GetById(1009);
             Assert.IsTrue(result.Id != 0);
         }
     }

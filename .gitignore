@@ -53,3 +53,9 @@
 /todoapp_NetCore/WebApplicationTodoApp/.vs
 /todoapp_NetCore/WebApplicationTodoApp/WebApplicationTodoApp/bin
 /todoapp_NetCore/WebApplicationTodoApp/WebApplicationTodoApp/obj
+/todoapp/uab.server.webapp/.vs
+/todoapp/uab.server.webapp/packages
+/todoapp/uab.server.webapp/uab.server.webapp/App_Start
+/todoapp/uab.server.webapp/uab.server.webapp/.vs
+/todoapp/uab.server.webapp/uab.server.webapp/obj
+/todoapp_NetCore/uab.server.webapp/.vs
