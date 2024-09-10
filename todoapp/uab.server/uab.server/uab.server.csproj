@@ -44,15 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\UsuarioBusiness.cs" />
     <Compile Include="Business\TodoAppBusiness.cs" />
     <Compile Include="Data\Contracts\IGenericDao.cs" />
+    <Compile Include="Data\Contracts\IUsuarioDao.cs" />
     <Compile Include="Data\Contracts\ITodoAppDao.cs" />
     <Compile Include="Data\GenericDao.cs" />
+    <Compile Include="Data\UsuarioDao.cs" />
     <Compile Include="Data\TodoAppDao.cs" />
     <Compile Include="Entities\TodoApp.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Usuario.hbm.xml" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\TodoApp.hbm.xml" />
   </ItemGroup>

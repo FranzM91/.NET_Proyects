@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
 using uab.server.Business;
@@ -29,9 +30,15 @@ namespace uab.server.webapp.Controllers
 
         [HttpPost]
         [Route("save")]
-        public IHttpActionResult Save(string dataName)
+        public IHttpActionResult Save(TodoApp dato)
         {
-            return Ok(dataName);
+            if(dato.Id == 0)
+            {
+                dato.FechaCreacion = DateTime.Now;
+            }
+            dato.FechaActualizacion = DateTime.Now;
+            var result = todoAppBusiness.SaveOrUpdate(dato);
+            return Ok(result);
         }
 
         [HttpPost]
@@ -39,6 +46,13 @@ namespace uab.server.webapp.Controllers
         public IHttpActionResult Update()
         {
             return Ok("actualizdo corretamente!!!");
+        }
+        [HttpPost]
+        [Route("delete")]
+        public IHttpActionResult Delete(int entityId)
+        {
+            todoAppBusiness.DeleteById(entityId);
+            return Ok("Se elimino corretamente!!!");
         }
 
         //// GET: api/TodoApp

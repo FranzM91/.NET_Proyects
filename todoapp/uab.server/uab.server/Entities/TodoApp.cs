@@ -10,5 +10,6 @@ namespace uab.server.Entities
         public bool Estado { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaActualizacion { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

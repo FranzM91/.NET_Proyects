@@ -13,5 +13,9 @@
 		<property name="Estado"/>
         <property name="FechaCreacion" column="FechaCreacion" type="DateTime2"/>
         <property name="FechaActualizacion" column="FechaActualizacion" type="DateTime2"/>
+		<many-to-one
+			name="Usuario"
+			column="UsuarioId"
+			class="uab.server.Entities.Usuario, uab.server"/>
 	</class>
 </hibernate-mapping>
