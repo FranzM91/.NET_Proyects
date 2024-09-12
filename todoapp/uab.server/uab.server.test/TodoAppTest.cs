@@ -51,10 +51,24 @@ namespace uab.server.test
         }
 
         [TestMethod]
-        public void ContarCantidad()
+        public void TotalActividades()
         {
-            var result = todoAppRepositorio.ContarActiviades(1);
-            Assert.IsTrue(result != 0);
+            var total = todoAppRepositorio.ContarActiviades(1);
+            Assert.IsTrue(total != 0);
+        }
+
+        [TestMethod]
+        public void GetAll()
+        {
+            var total = todoAppRepositorio.GetAll();
+            Assert.IsTrue(total.Count() != 0);
+        }
+
+        [TestMethod]
+        public void SearchByDescription()
+        {
+            var total = todoAppRepositorio.SearchByDescription("core");
+            Assert.IsTrue(total.Count() != 0);
         }
 
         #endregion

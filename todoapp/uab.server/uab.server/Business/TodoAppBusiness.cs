@@ -48,5 +48,15 @@ namespace uab.server.Business
         {
             return todoAppDao.ContarActiviades(usuarioId);
         }
+
+        public List<TodoApp> GetAll()
+        {
+            return todoAppDao.GetAll().ToList();
+        }
+
+        public IList<TodoApp> SearchByDescription(string description)
+        {
+            return todoAppDao.SearchByDescription(description);
+        }
     }
 }
