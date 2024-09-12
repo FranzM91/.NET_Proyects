@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
@@ -53,6 +54,15 @@ namespace uab.server.webapp.Controllers
         {
             todoAppBusiness.DeleteById(entityId);
             return Ok("Se elimino corretamente!!!");
+        }
+
+        [HttpPost]
+        [Route("serachbydescription")]
+        public IHttpActionResult SearchByDescrition(string description)
+        {
+            var resultado = todoAppBusiness.SearchByDescription(description);
+            var sexousuario = resultado.FirstOrDefault().Usuario.Sexo.ToString(); 
+            return Ok(resultado);
         }
 
         //// GET: api/TodoApp
