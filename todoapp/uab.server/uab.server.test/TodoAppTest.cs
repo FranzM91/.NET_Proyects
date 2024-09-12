@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 using uab.server.Business;
 using uab.server.Entities;
+using uab.server.Entities.Entities;
 
 namespace uab.server.test
 {
@@ -9,10 +11,14 @@ namespace uab.server.test
     public class TodoAppTest
     {
         private readonly TodoAppBusiness todoAppRepositorio;
+        private readonly UsuarioBusiness usuarioBusiness;
         public TodoAppTest()
         {
             todoAppRepositorio = new TodoAppBusiness();
+            usuarioBusiness = new UsuarioBusiness();
         }
+
+        #region TodoApp
         [TestMethod]
         public void Save()
         {
@@ -41,7 +47,32 @@ namespace uab.server.test
         {
             //llamar al metodo delete()
             todoAppRepositorio.DeleteById(4359);
-            Assert.IsTrue(1!=0);
+            Assert.IsTrue(1 != 0);
         }
+
+        [TestMethod]
+        public void ContarCantidad()
+        {
+            var result = todoAppRepositorio.ContarActiviades(1);
+            Assert.IsTrue(result != 0);
+        }
+
+        #endregion
+
+        #region Usuario
+        [TestMethod]
+        public void SaveUsuario()
+        {
+            var usuario = new Usuario()
+            {
+                Nombre = "test",
+                Apellido = "test",
+                FechaNacimiento = DateTime.Now,
+                Sexo = SexoEnum.Masculino,
+            };
+            var resultado = usuarioBusiness.SaveOrUpdate(usuario);
+            Assert.IsTrue(resultado.Id != 0);
+        }
+        #endregion
     }
 }

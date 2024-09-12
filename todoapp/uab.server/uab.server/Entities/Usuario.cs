@@ -1,4 +1,5 @@
 ﻿using System;
+using uab.server.Entities.Entities;
 
 namespace uab.server.Entities
 {
@@ -8,6 +9,6 @@ namespace uab.server.Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public bool Sexo { get; set; }
+        public SexoEnum Sexo { get; set; }
     }
 }

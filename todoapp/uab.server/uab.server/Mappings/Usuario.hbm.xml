@@ -10,7 +10,7 @@
 		</id>
 		<property name="Nombre"/>
 		<property name="Apellido"/>
-        <property name="FechaNacimiento" column="FechaCreacion" type="DateTime2"/>
+        <property name="FechaNacimiento" column="FechaNacimiento" type="DateTime2"/>
 		<property name="Sexo"/>
 	</class>
 </hibernate-mapping>

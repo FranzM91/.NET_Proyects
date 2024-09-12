@@ -15,7 +15,7 @@
         <property name="FechaActualizacion" column="FechaActualizacion" type="DateTime2"/>
 		<many-to-one
 			name="Usuario"
-			column="UsuarioId"
+			column="IdUsuario"
 			class="uab.server.Entities.Usuario, uab.server"/>
 	</class>
 </hibernate-mapping>

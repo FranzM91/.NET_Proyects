@@ -1,4 +1,6 @@
-﻿using uab.server.Data;
+﻿using System.Collections.Generic;
+using System.Linq;
+using uab.server.Data;
 using uab.server.Data.Contracts;
 using uab.server.Entities;
 
@@ -42,9 +44,9 @@ namespace uab.server.Business
             todoAppDao.DeleteById(entityId);
         }
 
-        //public TodoApp ActualizarDato(TodoApp data)
-        //{
-        //    return todoAppDao.Update(data);
-        //}
+        public int ContarActiviades(int usuarioId)
+        {
+            return todoAppDao.ContarActiviades(usuarioId);
+        }
     }
 }

@@ -11,27 +11,11 @@ namespace uab.server.Business
         {
             repository = new UsuarioDao();
         }
-
         public Usuario SaveOrUpdate(Usuario data)
         {
-            // opcion 1
-            var dato = new Usuario();
-            if (data.Id == 0)
-            {
-                // nuevo dato
-                dato = repository.Save(data);
-            }
-            else
-            {
-                // actualizar dato
-                dato = repository.Update(data);
-            }
-            return dato;
-
-            // opcion 2
-            //return (data.Id == 0) 
-            //        ? todoAppDao.Save(data) 
-            //        : todoAppDao.Update(data);
+            return (data.Id == 0) 
+                ? repository.Save(data) 
+                : repository.Update(data);
         }
         public Usuario GetById(int entityId)
         {
@@ -41,10 +25,5 @@ namespace uab.server.Business
         {
             repository.DeleteById(entityId);
         }
-
-        //public TodoApp ActualizarDato(TodoApp data)
-        //{
-        //    return todoAppDao.Update(data);
-        //}
     }
 }

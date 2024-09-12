@@ -52,6 +52,7 @@
     <Compile Include="Data\GenericDao.cs" />
     <Compile Include="Data\UsuarioDao.cs" />
     <Compile Include="Data\TodoAppDao.cs" />
+    <Compile Include="Entities\enum\SexoEnum.cs" />
     <Compile Include="Entities\TodoApp.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,5 +63,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Mappings\TodoApp.hbm.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
