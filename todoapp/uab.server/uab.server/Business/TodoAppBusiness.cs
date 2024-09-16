@@ -58,5 +58,10 @@ namespace uab.server.Business
         {
             return todoAppDao.SearchByDescription(description);
         }
+
+        public int ContarActividadesScript(int usuarioId)
+        {
+            return todoAppDao.ContarActividadesScript(usuarioId);
+        }
     }
 }

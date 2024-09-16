@@ -1,4 +1,5 @@
 ﻿using NHibernate.Criterion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using uab.server.Data.Contracts;
@@ -27,6 +28,17 @@ namespace uab.server.Data
             var result = session.QueryOver<TodoApp>()
                 .Where(src => src.Descripcion.IsLike(description, MatchMode.Anywhere));
             return result.List();
+        }
+
+        public int ContarActividadesScript(int usuarioId)
+        {
+            var query = @"SELECT COUNT(ta.Id) FROM todoApp ta
+                            INNER JOIN usuario us ON ta.IdUsuario = us.Id
+                            WHERE us.Id = :userId";
+            var result = session.CreateSQLQuery(query)
+                .SetParameter("userId", usuarioId)
+                .UniqueResult();
+            return Convert.ToInt32(result);
         }
     }
 }

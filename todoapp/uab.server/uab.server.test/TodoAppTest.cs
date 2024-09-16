@@ -71,6 +71,13 @@ namespace uab.server.test
             Assert.IsTrue(total.Count() != 0);
         }
 
+        [TestMethod]
+        public void ContarActividadesScript()
+        {
+            var total = todoAppRepositorio.ContarActividadesScript(101);
+            Assert.IsTrue(total != 0);
+        }
+
         #endregion
 
         #region Usuario
