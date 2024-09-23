@@ -9,5 +9,6 @@ namespace uab.server.Data.Contracts
         IList<TodoApp> GetAll();
         IList<TodoApp> SearchByDescription(string description);
         int ContarActividadesScript(int usuarioId);
+        IList<TodoAppModel> FindByUserName(string name);
     }
 }

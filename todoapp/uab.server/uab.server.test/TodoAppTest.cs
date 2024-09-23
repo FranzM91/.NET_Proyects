@@ -78,6 +78,13 @@ namespace uab.server.test
             Assert.IsTrue(total != 0);
         }
 
+        [TestMethod]
+        public void FindByUserName()
+        {
+            var total = todoAppRepositorio.FindByUserName("Tommy");
+            Assert.IsTrue(total.Count() != 0);
+        }
+
         #endregion
 
         #region Usuario

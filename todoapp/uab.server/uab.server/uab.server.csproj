@@ -53,6 +53,7 @@
     <Compile Include="Data\UsuarioDao.cs" />
     <Compile Include="Data\TodoAppDao.cs" />
     <Compile Include="Entities\enum\SexoEnum.cs" />
+    <Compile Include="Entities\TodoAppModel.cs" />
     <Compile Include="Entities\TodoApp.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

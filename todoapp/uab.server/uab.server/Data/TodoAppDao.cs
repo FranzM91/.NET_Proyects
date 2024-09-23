@@ -1,4 +1,5 @@
 ﻿using NHibernate.Criterion;
+using NHibernate.Transform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,40 @@ namespace uab.server.Data
                 .SetParameter("userId", usuarioId)
                 .UniqueResult();
             return Convert.ToInt32(result);
+        }
+
+        public IList<TodoApp> SearchByUserName(string userName)
+        {
+            Usuario usuarioAlias = null;
+            var result = session.QueryOver<TodoApp>()
+                .JoinAlias(src => src.Usuario, () => usuarioAlias)
+                .Where(() => usuarioAlias.Nombre.IsLike(userName, MatchMode.Anywhere))
+                .List();
+            return result;
+        }
+
+        public IList<TodoApp> FindByUserFechaNacimiento(DateTime from, DateTime to)
+        {
+            Usuario usuarioAlias = null;
+            var result = session.QueryOver<TodoApp>()
+                .JoinAlias(src => src.Usuario, () => usuarioAlias)
+                .Where(() => usuarioAlias.FechaNacimiento.Month >= from.Month 
+                            && usuarioAlias.FechaNacimiento.Year >= from.Year
+                            && usuarioAlias.FechaNacimiento.Month <= to.Month
+                            && usuarioAlias.FechaNacimiento.Year <= to.Year)
+                .List();
+            return result;
+        }
+
+        public IList<TodoAppModel> FindByUserName(string name)
+        {
+            var query = @"SELECT ta.* FROM todoApp ta
+                            INNER JOIN usuario us ON ta.IdUsuario = us.Id
+                            WHERE us.Nombre = :userName";
+            var result = session.CreateSQLQuery(query)
+                .SetParameter("userName", name)
+                .SetResultTransformer(Transformers.AliasToBean<TodoAppModel>());
+            return result.List<TodoAppModel>();
         }
     }
 }

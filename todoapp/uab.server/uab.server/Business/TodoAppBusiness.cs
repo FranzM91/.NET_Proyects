@@ -63,5 +63,10 @@ namespace uab.server.Business
         {
             return todoAppDao.ContarActividadesScript(usuarioId);
         }
+
+        public List<TodoAppModel> FindByUserName(string name)
+        {
+            return todoAppDao.FindByUserName(name).ToList();
+        }
     }
 }
