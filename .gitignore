@@ -64,3 +64,13 @@
 /todoapp/uab.server/uab.server.test/obj
 /todoapp/uab.server.webapp/uab.server.webapp/bin
 /todoapp/uab.server/uab.server/bin
+todoapp_NetCore/uab.server.webapp/uab.server.webapp/bin/Debug/net8.0/Antlr3.Runtime.dll
+todoapp_NetCore/uab.server.webapp/uab.server.webapp/bin/Debug/net8.0/appsettings.Development.json
+/todoapp_NetCore/uab.server.webapp/uab.server.webapp/bin
+/todoapp_NetCore/uab.server.webapp/uab.server.webapp/obj
+/manilab EF/manilab.server/manilab.core.interfaces/.vs
+/manilab EF/manilab.server/manilab.Entities/.vs
+/manilab EF/manilab.server/manilab.server/.vs
+/manilab EF/manilab.server/manilab.interfaces/.vs
+/manilab EF/manilab.server/manilab.test/.vs
+/manilab EF/manilab.server/manilab.core.entityframework/.vs
