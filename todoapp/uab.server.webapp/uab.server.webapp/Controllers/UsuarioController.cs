@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Http.Results;
 using uab.server.Business;
 using uab.server.Entities;
+using uab.server.Entities.Entities;
+using uab.server.webapp.Models;
 
 namespace uab.server.webapp.Controllers
 {
@@ -30,6 +32,20 @@ namespace uab.server.webapp.Controllers
                     result.Add(usuario);
             }
             return Ok(result);
+        }
+
+        //localhost:4333/api/usuario/save/5
+        [HttpPost]
+        [Route("save")]
+        public IHttpActionResult SaveMethod([FromBody] LiteUsuarioModel entity)
+        {
+            var usuario = usuarioBusiness.GetById(entity.Id) ?? new Usuario();
+            usuario.Nombre = entity.Nombre;
+            usuario.Apellido = entity.Apellido;
+            usuario.FechaNacimiento = entity.FechaNacimiento;
+            usuario.Sexo = (entity.Sexo.id == 0) ? SexoEnum.Femenino : SexoEnum.Masculino;
+            usuarioBusiness.SaveOrUpdate(usuario);
+            return Ok();
         }
 
         //[HttpPost]
