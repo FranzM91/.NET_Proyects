@@ -48,6 +48,14 @@ namespace uab.server.webapp.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("delete/{entityId}")]
+        public IHttpActionResult DeleteMethod(int entityId)
+        {
+            usuarioBusiness.DeleteById(entityId);
+            return Ok();
+        }
+
         //[HttpPost]
         //[Route("save")]
         //public IHttpActionResult Save(TodoApp dato)
