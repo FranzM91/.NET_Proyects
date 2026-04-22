@@ -58,9 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManilabContext.cs" />
-    <Compile Include="Migrations\202408072002111_InitialCreate.cs" />
-    <Compile Include="Migrations\202408072002111_InitialCreate.designer.cs">
-      <DependentUpon>202408072002111_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202603261513364_initialcreate.cs" />
+    <Compile Include="Migrations\202603261513364_initialcreate.Designer.cs">
+      <DependentUpon>202603261513364_initialcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserTest.cs" />
@@ -94,8 +94,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202408072002111_InitialCreate.resx">
-      <DependentUpon>202408072002111_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202603261513364_initialcreate.resx">
+      <DependentUpon>202603261513364_initialcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

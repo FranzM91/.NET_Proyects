@@ -22,7 +22,7 @@ namespace manilab.test
                 id = Guid.NewGuid().ToString(),
                 name = "test",
                 email = "test@mail.com",
-                cel = "123456789",
+                cel = "8001010",
                 password = "123456"
             };
 

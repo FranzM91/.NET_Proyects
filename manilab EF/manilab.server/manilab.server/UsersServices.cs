@@ -49,6 +49,11 @@ namespace manilab.server
         {
             return context.Set<Users>().Count(src => src.id == id) > 0;
         }
+
+        public List<Users> exampleQuery(string id)
+        {
+            return Query(data => data.id == id).ToList();
+        }
         //public List<User> GetAll()
         //{
         //    return context.Set<User>().ToList();

@@ -1,69 +1,113 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
 using uab.server.Business;
 using uab.server.Entities;
+using uab.server.webapp.Models;
 
 namespace uab.server.webapp.Controllers
 {
     [RoutePrefix("api/todoapp")]
     public class TodoAppController : ApiController
     {
-        private readonly TodoAppBusiness todoAppBusiness;
+        //private readonly TodoAppBusiness todoAppBusiness;
         public TodoAppController()
         {
-            todoAppBusiness = new TodoAppBusiness();
+            //todoAppBusiness = new TodoAppBusiness();
         }
 
-        [HttpPost]
-        [Route("getbyid")]
-        public IHttpActionResult RetornarTodoApp(int entityId)
+        [HttpGet]
+        [Route("getbyfilter/{filter}")]
+        public IHttpActionResult GetByFilter(string filter)
         {
-            var resultado = todoAppBusiness.GetById(entityId) ?? new TodoApp();
-            if(resultado.Id == 0)
+            var result = new List<LiteGeneroModel>()
             {
-                return NotFound();
-            }
-            return Ok(resultado);
-        }
+                new LiteGeneroModel()
+                {
+                    id = 1,
+                    nombre = "Teclado"
+                },
+                new LiteGeneroModel()
+                {
+                    id = 2,
+                    nombre = "Monitor DELL"
+                },
+                new LiteGeneroModel()
+                {
+                    id = 3,
+                    nombre = "Monitor ASUS"
+                },
+                new LiteGeneroModel()
+                {
+                    id = 4,
+                    nombre = "Cargador 19v"
+                },
+                new LiteGeneroModel()
+                {
+                    id = 5,
+                    nombre = "CPU Core i7"
+                },
+                new LiteGeneroModel()
+                {
+                    id = 6,
+                    nombre = "CPU Core i3"
+                }
+            };
 
-        [HttpPost]
-        [Route("save")]
-        public IHttpActionResult Save(TodoApp dato)
-        {
-            if(dato.Id == 0)
-            {
-                dato.FechaCreacion = DateTime.Now;
-            }
-            dato.FechaActualizacion = DateTime.Now;
-            var result = todoAppBusiness.SaveOrUpdate(dato);
+            result.Where(src => src.nombre.Contains(filter));
             return Ok(result);
         }
 
-        [HttpPost]
-        [Route("update")]
-        public IHttpActionResult Update()
-        {
-            return Ok("actualizdo corretamente!!!");
-        }
-        [HttpPost]
-        [Route("delete")]
-        public IHttpActionResult Delete(int entityId)
-        {
-            todoAppBusiness.DeleteById(entityId);
-            return Ok("Se elimino corretamente!!!");
-        }
+        //[HttpPost]
+        //[Route("getbyid")]
+        //public IHttpActionResult RetornarTodoApp(int entityId)
+        //{
+        //    var resultado = todoAppBusiness.GetById(entityId) ?? new TodoApp();
+        //    if(resultado.Id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(resultado);
+        //}
 
-        [HttpPost]
-        [Route("serachbydescription")]
-        public IHttpActionResult SearchByDescrition(string description)
-        {
-            var resultado = todoAppBusiness.SearchByDescription(description);
-            var sexousuario = resultado.FirstOrDefault().Usuario.Sexo.ToString(); 
-            return Ok(resultado);
-        }
+        //[HttpPost]
+        //[Route("save")]
+        //public IHttpActionResult Save(TodoApp dato)
+        //{
+        //    if(dato.Id == 0)
+        //    {
+        //        dato.FechaCreacion = DateTime.Now;
+        //    }
+        //    dato.FechaActualizacion = DateTime.Now;
+        //    var result = todoAppBusiness.SaveOrUpdate(dato);
+        //    return Ok(result);
+        //}
+
+        //[HttpPost]
+        //[Route("update")]
+        //public IHttpActionResult Update()
+        //{
+        //    return Ok("actualizdo corretamente!!!");
+        //}
+        //[HttpPost]
+        //[Route("delete")]
+        //public IHttpActionResult Delete(int entityId)
+        //{
+        //    todoAppBusiness.DeleteById(entityId);
+        //    return Ok("Se elimino corretamente!!!");
+        //}
+
+        //[HttpPost]
+        //[Route("serachbydescription")]
+        //public IHttpActionResult SearchByDescrition(string description)
+        //{
+        //    var resultado = todoAppBusiness.SearchByDescription(description);
+        //    var sexousuario = resultado.FirstOrDefault().Usuario.Sexo.ToString(); 
+        //    return Ok(resultado);
+        //}
 
         //// GET: api/TodoApp
         //public IHttpActionResult Get()

@@ -97,3 +97,9 @@ todoapp_NetCore/uab.server.webapp/uab.server.webapp/bin/Debug/net8.0/appsettings
 /uab_academico/uab.server/uab.server/bin
 /uab_academico/uab.server/uab.server/.vs
 /uab_academico/uab.server/uab.server.test/.vs
+/google/google.server/.vs
+/google/google.server/bin
+/google/google.server/obj
+/google/google.test/bin
+/google/google.test/obj
+/NetworkServer/.vs
