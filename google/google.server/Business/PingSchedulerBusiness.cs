@@ -24,20 +24,20 @@ namespace google.server.Business
          */
 
         private Timer _timer;
-        private readonly string _baseIp;
-        private readonly int _start;
-        private readonly int _end;
-        private readonly string _logFile;
-        public PingSchedulerBusiness(string baseIp, int start, int end, string logFile = "ips_activas.txt")
+        private readonly List<string> allIps;
+        //private readonly string logFile;
+        private readonly UsuarioBusiness usuarioBusiness;
+        public PingSchedulerBusiness(string logFile = "ips_activas.txt")
         {
-            _baseIp = baseIp;
-            _start = start;
-            _end = end;
-            _logFile = logFile;
+            this.allIps = new List<string>();
+            //this.logFile = logFile;
+            usuarioBusiness = new UsuarioBusiness();
         }
 
         public void Start()
         {
+            var usuarios = usuarioBusiness.getAllIps();
+            allIps.AddRange(allIps);
             _timer = new Timer(async _ => await EjecutarTarea(), null, 0, 2000);
         }
 
@@ -51,30 +51,29 @@ namespace google.server.Business
 
         private async Task EjecutarTarea()
         {
-            var activos = await EscanearRangoAsync(_baseIp, _start, _end);
-            GuardarResultados(activos, _logFile);
+            var fueraDeServicio = await EscanearRangoAsync(allIps);
+            GuardarResultados(fueraDeServicio);
         }
 
-        private async Task<List<string>> EscanearRangoAsync(string baseIp, int start, int end)
+        private async Task<List<string>> EscanearRangoAsync(List<string> allIps)
         {
             var tasks = new List<Task<(string ip, bool activo)>>();
 
-            for (int i = start; i <= end; i++)
+            foreach (var ip in allIps)
             {
-                string ip = baseIp + i;
                 tasks.Add(RealizarPingAsync(ip));
             }
 
             var results = await Task.WhenAll(tasks);
 
-            var activos = new List<string>();
+            var fueraDeServicio = new List<string>();
             foreach (var result in results)
             {
-                if (result.activo)
-                    activos.Add(result.ip);
+                if (!result.activo)
+                    fueraDeServicio.Add(result.ip); // TODO: Guardar ip que estan fuera de servicio
             }
 
-            return activos;
+            return fueraDeServicio;
         }
 
         private async Task<(string ip, bool activo)> RealizarPingAsync(string ipAddress)
@@ -93,23 +92,32 @@ namespace google.server.Business
             }
         }
 
-        private void GuardarResultados(List<string> activos, string fileName)
+        private void GuardarResultados(List<string> fueraDeServicio)
         {
-            try
+            //try
+            //{
+            //    using (StreamWriter writer = new StreamWriter(fileName, true))
+            //    {
+            //        writer.WriteLine($"--- Escaneo realizado el {DateTime.Now} ---");
+            //        foreach (var ip in activos)
+            //        {
+            //            writer.WriteLine(ip);
+            //        }
+            //        writer.WriteLine();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Error al guardar resultados: {ex.Message}");
+            //}
+            foreach (var item in fueraDeServicio)
             {
-                using (StreamWriter writer = new StreamWriter(fileName, true))
+                var usuarioEntity = usuarioBusiness.getByIp(item);
+                if (usuarioEntity != null)
                 {
-                    writer.WriteLine($"--- Escaneo realizado el {DateTime.Now} ---");
-                    foreach (var ip in activos)
-                    {
-                        writer.WriteLine(ip);
-                    }
-                    writer.WriteLine();
+                    usuarioEntity.status = false;
+                    usuarioBusiness.Save(usuarioEntity);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al guardar resultados: {ex.Message}");
             }
         }
     }

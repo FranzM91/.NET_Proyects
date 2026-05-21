@@ -103,3 +103,12 @@ todoapp_NetCore/uab.server.webapp/uab.server.webapp/bin/Debug/net8.0/appsettings
 /google/google.test/bin
 /google/google.test/obj
 /NetworkServer/.vs
+/google/google.wepapi/.vs
+/google/google.wepapi/bin
+/google/google.wepapi/obj
+/manilab EF/manilab.WebApp/.vs
+/manilab EF/manilab.WebApp/bin
+/manilab EF/manilab.WebApp/obj
+/manilab EF/manilab.WebApp/packages
+/NetworkServer/bin
+/NetworkServer/obj

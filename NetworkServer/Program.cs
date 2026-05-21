@@ -10,7 +10,7 @@ namespace NetworkServer
     {
         static async Task Main(string[] args)
         {
-            string baseIp = "192.168.50.";
+            string baseIp = "192.168.28.";
             int start = 2;
             int end = 224;
 

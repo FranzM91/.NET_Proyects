@@ -1,93 +1,97 @@
-﻿using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using google.server.Business.Contracts;
 using google.server.Entity;
+using google.server.Mappings;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-using System.Configuration;
 
 namespace google.server.Data
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : IEntity
+    public class GenericRepository<T> : IGenericRepository<T>, IDisposable where T : IEntity
     {
-        private ISessionFactory SessionCore { get; set; }
-        public ISession Session { get; set; }
-        private ITransaction transaction { get; set; }
+        private static ISessionFactory? _sessionFactory;
+        private static readonly object _lock = new object();
+
+        public ISession Session { get; private set; }
+
         public GenericRepository()
         {
-            LoadSession();
+            if (_sessionFactory == null)
+            {
+                lock (_lock)
+                {
+                    if (_sessionFactory == null)
+                    {
+                        _sessionFactory = CreateSessionFactory();
+                    }
+                }
+            }
+            Session = _sessionFactory.OpenSession();
         }
-        public void LoadSession()
+
+        private static ISessionFactory CreateSessionFactory()
         {
-
-            //var connectionString = ConfigurationManager.AppSettings["ConnectionString"];
-
-            var configuration = Fluently.Configure()
+            return Fluently.Configure()
                 .Database(PostgreSQLConfiguration.Standard
-                    //.ConnectionString(connectionString)
                     .ConnectionString(cs => cs
                         .Host("127.0.0.1")
-                        .Port(5222)
-                        .Database("impocruz-db")
-                        .Username("postgres")
+                        .Port(5221)
+                        .Database("control-uab-db")
+                        .Username("sa")
                         .Password("1844")
                     )
-                    //.DefaultSchema("dbo")
                     .DefaultSchema("public")
-                    //.AdoNetBatchSize(50)
                     .ShowSql()
-                    //.FormatSql()
-                    )
+                )
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<IEntity>())
                 .ExposeConfiguration(cfg =>
                 {
-                    //cfg.SetProperty("current_session_context_class", "thread_static");
                     // Automatically create/update schema
-                    new SchemaUpdate(cfg).Execute(false, true);
+                    new SchemaUpdate(cfg).Execute(true, true);
                 })
-                .BuildConfiguration();
-
-            SessionCore = configuration.BuildSessionFactory();
-            Session = SessionCore.OpenSession();
-            transaction = Session.BeginTransaction();
+                .BuildSessionFactory();
         }
 
         public T GetById(int Id)
         {
-            using (ISession nhSession = SessionCore.OpenSession())
-            {
-                nhSession.Get<T>(Id);
-                return nhSession.Get<T>(Id);
-            }
+            return Session.Get<T>(Id);
         }
 
         public T Save(T entity)
         {
-            using (ISession nhSession = SessionCore.OpenSession())
+            using (ITransaction transaction = Session.BeginTransaction())
             {
-                nhSession.Save(entity);
+                Session.Save(entity);
+                transaction.Commit();
                 return entity;
             }
         }
 
         public T Update(T t)
         {
-            using (ISession nhSession = SessionCore.OpenSession())
+            using (ITransaction transaction = Session.BeginTransaction())
             {
-                using (ITransaction transaction = nhSession.BeginTransaction())
-                {
-                    nhSession.Update(t);
-                    transaction.Commit();
-                    return t;
-                }
+                Session.Update(t);
+                transaction.Commit();
+                return t;
             }
         }
 
         public void Delete(T t)
         {
-            using (ISession nhSession = SessionCore.OpenSession())
+            using (ITransaction transaction = Session.BeginTransaction())
             {
-                nhSession.Delete(t);
+                Session.Delete(t);
+                transaction.Commit();
+            }
+        }
+
+        public void Dispose()
+        {
+            if (Session != null && Session.IsOpen)
+            {
+                Session.Dispose();
             }
         }
     }

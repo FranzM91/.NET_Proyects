@@ -18,5 +18,13 @@ namespace google.server.Data
         {
             return Session.Query<Usuario>().ToList();
         }
+
+        public Usuario getByIp(string ip)
+        {
+            var result = Session.Query<Usuario>()
+                .Where(src => src.ip.Like(ip))
+                .FirstOrDefault();
+            return result;
+        }
     }
 }
